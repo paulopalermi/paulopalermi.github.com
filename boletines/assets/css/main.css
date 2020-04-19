@@ -1,0 +1,176 @@
+/*
+Gris: #eff1ed
+Durazno: #e4b363
+Ciruela: #4f0c1f
+Verde: #9ebc9f
+*/
+html{
+    font-family: 'Fira Sans', sans-serif;
+}
+a{
+    text-decoration: none; /*esto es para eliminar la raya debajo del link*/
+    color: crimson;
+}
+
+a:hover{
+    opacity: 0.8; /*esta propiedad esta aplicada sobre "a" osea el link. hace que el link adopte color de font diferente
+    cuando el mouse pasa por encima de el*/
+}
+
+a:active{
+background: lightcoral; /*hace que el link adopte color de fondo cuando el mouse pasa por encima de el*/
+}
+
+a:focus{
+    background: lightseagreen;/*link cambia color de fondo cuando el foco se situa sobre el - seleccion con tecla TAB*/
+}
+
+img{
+    max-width: 100%;
+}
+
+.title{
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+.container {
+    background: #e4b363; /*Respaldo. Primero colocamos un color solido que cualquier navegador pueda entender y luego los degradados*/
+    background: -webkit-linear-gradient(to right, #7763e6, #640fa8);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #740c0c, #640fa8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+.content{
+    max-width: 960px;
+    width: 100%; /*se va a estirar el maximo posible sin exceder los limites de arriba de 960px*/
+    height: 80vh;
+    background-color: white;
+    box-shadow: 0 3px 6px black, 0 3px 6px rgba(0,0,0,0.23);
+    /*box-shadow: diferenciaHorizontal diferenciaVertical desenfoque amplitud color
+    si colocamos menos de 5 valores, el primero que se ignora es el de amplitud, el segundo en de desenfoque*/
+    border-radius: 4px;
+    position: relative; /*Esta Position:relative me va a permitir ubicar la X en relacion con este .content
+    Recordar que por defecto los elementos tienen position:static*/
+    overflow: scroll;
+    /*overflow-x: hidden - overflow-y: scroll;; /*este overflow permite que en la direccion "y" se permite el scroll pero en el eje "x" se oculte*/
+}
+.content{
+    padding: 1em;
+}
+    
+td{/*con esto rompo la fila. me la muestra encolumnada*/
+    display: block; 
+    width:100%*/
+} 
+td:nth-of-type(1){ /*esta es una subclase. lo que indico aca es que para los <td> de la tabla original diseño
+    selecciono las primeras filas (las que tienen el numero) para aplicar propiedades diferentes. en este caso
+    hacer mas vistoso el numero de orden de cada libro*/
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(82, 8, 59);
+}
+th{
+    display: none;
+}
+
+.actions{
+    position: absolute; /*este .action es el link dentro del .content que va a estar en posicion relativa con el .content*/
+    top:1em;
+    right:1em;
+}
+
+.close{/*esta es la clase del link. desde aca le voy a dar el formato que aparece en "volcan Azul"*/
+height: 30px;
+width: 30px;
+color: white;
+border-radius: 50%;
+background-color: rgb(204, 50, 101);
+display: inline-block; /*esta propiedad display tengo que colocarla porque sino no me toma el height y el weight*/
+box-shadow: 0 3px 6px black, 0 3px 6px rgba(0,0,0,0.23);
+cursor: pointer;
+font-weight: 300;
+font-size: small;
+/*hasta aca la x de cerrar de la pagina volcan azul queda ubicada en el borde superior. para dejarla en el medio
+voy a utilizar flex box y ubicarla*/
+display: flex; /*primero coloco este comando para usar flexbox*/
+align-items: center;
+justify-content: center;
+}
+.paragraph{
+    line-height: 1.5em;
+    font-weight: 400;
+}
+.table{
+    width: 100%;
+    border-spacing: 0;
+}
+.table td, .table th{
+    padding: 1em;
+    text-align: left;
+}
+.table tr:nth-child(even) {background-color: rgb(202, 228, 236);}
+.fa-star{
+    color: #ffc400;
+}
+.title-item{
+/*    border-bottom-style: solid;
+    border-width: 2px;
+    border-color: mediumvioletred;*/
+    padding-bottom: 1em;
+    /*padding y margin son shorthand properties. sintaxis: padding:arriba derecha abajo izquierda
+    cuando se toman dos valores se interpretan asi: padding:arriba/abajo derecha/izquierda
+    cuando se especifica 1 solo valor, se interpreta que se aplica el mismo a todos los lados*/
+    padding-bottom: 1em;
+    border-bottom: rgb(158, 5, 77) solid 2px;
+    font-size: 2em;
+}
+.position{background-color: darksalmon;
+    color: white;
+    padding: 0.5em;
+    /*border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    Todo esto tambien se puede reemplazar con shorthand propertie border-radius: y agujas del reloj*/
+    border-radius: 4px;
+    margin-right: 0.5em;
+    font-size: 1em;
+}
+.adress{
+    color: rgb(204, 50, 101);
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 1em;
+    display: inline-block /*los elementos que por defecto estan en "inline" no aceptan el margen. por eso inline-block*/
+}
+.fotovolcan{
+    float: left;
+    margin-right: 1em;
+    height: 230px;
+}
+
+@media (min-height:550px){
+    .content{
+        height:500px;
+    }
+}
+@media (min-width:900px){
+    th{
+        display: table-cell;
+    }
+    td{
+        width: auto;
+        display: table-cell;
+    }
+    td:nth-of-type(1){
+        font-size: 1em;
+    }
+    .content{
+        padding: 1.8em;
+    }
+}

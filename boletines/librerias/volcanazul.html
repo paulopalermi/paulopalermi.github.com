@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://kit.fontawesome.com/f615c9a151.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>Los libros de la pandemia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400&display=swap" rel="stylesheet">    
+    <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
+    <link href="https://..font-awesome/css/all.css" rel="stylesheet">
+    <link href="../assets/css/main.css" rel="stylesheet">
+    <link href="../assets/css/animate.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="content animated zoomIn">
+            <div class="actions">
+                <a href="../index.html" class="close">
+                <span>X</span> <!-- colocar este span aca con la x me permite despues ubicarla con flexbox dentro del boton
+                circular que es el padre {<a class="close"></a> -->
+                </a>
+            </div>
+            <header>
+                <h2 class="title-item">
+                    <span class="position">1</span> 
+                    VOLCAN AZUL</h2> <!--esta etiqueta <span> dentro de h2 me permite meter un elemento en la misma linea de Volcan Azul,
+                        en este caso, y aplicarles propiedades CSS mediante clase. A diferencia de la etiqueta <div> esta etiqueta mantiene el texto en la misma linea dentro del bloque-->
+            </header>
+            <section>
+                <img class="fotovolcan" src="../imagenes/volcanazul.png" alt="Libreria Volcan Azul"><!--alt sirve para los dispositivos que muestren imagenes. se mostrara el texo ingresado-->
+                <div class="text">
+                    <address class="adress">
+                        <i class="fas fa-map-marked-alt"></i>
+                        Galeria Guemes - Local 10
+                    </address>
+                    <p class="paragraph">Libros & Arte</p>
+                    <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
